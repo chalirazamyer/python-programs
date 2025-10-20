@@ -28,6 +28,16 @@ def division(first_number, second_number):
     return number
 
 
+def modulus(first_number, second_number):
+    number = first_number % second_number
+    return number
+
+
+def exponent(first_number, second_number):
+    number = first_number ** second_number
+    return number
+
+
 def enter_number():
     first_number = int(input("Enter Number 1: "))
     second_number = int(input("Enter Number 2: "))
@@ -36,7 +46,7 @@ def enter_number():
 
 while True:
     select_option = input("What operation you want perform(+, -, *, /, exit): ").lower()
-    valid_option = ("+", "-", "*", "/", "exit")
+    valid_option = ("+", "-", "*", "/", "^", "%", "exit")
     if select_option in valid_option:
         if select_option == "+":
             first_number, second_number = enter_number()
@@ -50,6 +60,12 @@ while True:
         elif select_option == "/":
             first_number, second_number = enter_number()
             print(f"Division of two numbers: {division(first_number, second_number)}")
+        elif select_option == "^":
+            first_number, second_number = enter_number()
+            print(f"Power of {first_number} by {second_number} : {exponent(first_number, second_number)}")
+        elif select_option == "%":
+            first_number, second_number = enter_number()
+            print(f"Modulus of two numbers: {modulus(first_number, second_number)}")
         elif select_option == "exit":
             print("Program existing! Thanks")
             break
